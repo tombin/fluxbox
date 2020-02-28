@@ -1,0 +1,33 @@
+[begin] (menu)
+[encoding] {UTF-8}
+    [exec] (xterm) {xterm}
+    [exec] (terminal) {terminator}
+    [exec] (firefox) {firefox}
+    [exec] (claws-mail) {claws-mail}
+    [exec] (signal) {signal-desktop}
+    [exec] (pidgin) {pidgin}
+    [exec] (mkvtoolnix) {mkvtoolnix-gui}
+    [submenu] (fluxbox)
+        [config] (configure)
+        [submenu] (system styles) {Choose a style...}
+            [stylesdir] (/usr/share/fluxbox/styles)
+        [end]
+        [submenu] (user styles) {Choose a style...}
+            [stylesdir] (~/.fluxbox/styles)
+        [end]
+        [submenu] (lightdm) {}
+          [exec] (settings) {sudo lightdm-gtk-greeter-settings}
+        [end]
+        [submenu] (wallpapers)
+            [wallpapers] (~/wallpapers) {feh --bg-scale}
+        [end]
+        [workspaces] (workspace list)
+        [commanddialog] (fluxbox command)
+        [reconfig] (reload config)
+        [restart] (restart)
+        [exec] (about) {(fluxbox -v; fluxbox -info | sed 1d) | gxmessage -file - -center}
+        [separator]
+        [exit] (exit)
+    [end]
+[endencoding]
+[end]
